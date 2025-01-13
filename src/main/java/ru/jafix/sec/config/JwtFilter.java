@@ -13,7 +13,6 @@ import ru.jafix.sec.entity.dto.JwtAuthentication;
 import ru.jafix.sec.service.JwtService;
 
 import java.io.IOException;
-import java.util.List;
 
 public class JwtFilter extends OncePerRequestFilter {
 

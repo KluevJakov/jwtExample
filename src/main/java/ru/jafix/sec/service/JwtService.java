@@ -37,10 +37,7 @@ public class JwtService {
 
     public boolean validate(String token) {
         try {
-            Jwts.parser()
-                    .verifyWith(getSecretKey())
-                    .build()
-                    .parseSignedClaims(token);
+            parse(token);
             return true;
         } catch (Exception e) {
             log.error(e.getMessage());

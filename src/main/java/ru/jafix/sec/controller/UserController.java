@@ -39,8 +39,7 @@ public class UserController {
     @GetMapping("/{id}")
     public ResponseEntity<?> getUser(@PathVariable("id") UUID id) {
         try {
-            User userIfPresent = userService.getUser(id);
-            return ResponseEntity.ok(userIfPresent);
+            return ResponseEntity.ok(userService.getUser(id));
         } catch (NoSuchElementException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }

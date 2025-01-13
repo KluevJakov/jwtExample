@@ -14,6 +14,7 @@ import ru.jafix.sec.entity.dto.UserDto;
 import ru.jafix.sec.repo.RoleRepository;
 import ru.jafix.sec.repo.UserRepository;
 
+import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -58,14 +59,19 @@ public class UserService implements UserDetailsService {
         userRepository.deleteById(id);
     }
 
-    public User getUser(UUID id) {
-        return userRepository.findById(id)
-                .orElseThrow();
+    public UserDto getUser(UUID id) {
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new NoSuchElementException("Пользователь с таким id найден"));
+
+        return UserDto.builder()
+                .id(user.getId())
+                .email(user.getEmail())
+                .build();
     }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return userRepository.findByEmail(username)
-                .orElseThrow(() -> new UsernameNotFoundException("Пользователь с таким email найден"));
+                .orElseThrow(() -> new NoSuchElementException("Пользователь с таким email найден"));
     }
 }
