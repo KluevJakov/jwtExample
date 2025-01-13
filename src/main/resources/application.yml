@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/sec
+    username: postgres
+    password: postgres
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+
+jwt:
+  secret: SD9EeVM9VCI6RiwnJkcjXjRlJDcrNgp0ezosS1ZRZzZGfWplZG53P1RSc3pNCnM7X0NrKTg3PkZ0LjRSKkwyQEtHQVgKZkVVOFkvQH5ySyxSNiZwNVAyTTk+YwpaTTUyWHAsO3JCX1ImRTcnc0FeNHp0CnErVS5iZFJgWCJtdz9EemNOSyxFNVQKeGgyd3BLLTQ/OFllLnNKNytDbjtbJApiIzktJU0rZnJIaFlQbSRuPUtddDcpCmU1Q3duQl5NSCQnek48VCl0QCYlPlsKVEF3djd4PzkoPSdLRWdaO0pxbiMrLwphc2ZNUS9fS3EmIng9NHZUQlY1UC02CnVDMjZdR1olOTguZ3l4Yk47cHRYSlYKVWtBVjhtLS8kenkqM1RecjJdYXYuRApjcGh1XWBrLGdDYTkjZTU+UUYmeE4qCmRfRit9bSlOYzJLdDNraEJIXUFQWmYKbU08a3NadnRiaG5UNEtxZ1Y4ciVkRAp4UVA4eSNxVTsvdWBbfTItPnRmXSooCkcyTTkkO0ZOdT9IY1N9VTorM2BRXnMKcXo+UExwV2RYOUUvWWZHYiRrIlZyVApScmRWRC1QWSx5YCE0QTs3VGptOStnCnVVJltBMk5FUnI9WlllUSFCXkptO3AKaj1kInNIbidgeEtxRzVZYiopQ3JEdQpLPHM6ZFEnWF5OKG0uNzVGUGMpeEIkCkt1OiopYjhmcWQuK1hjUVM9PzJnX0gKclBMYFI/O3t6ZzJ0Q1UoWmU2bWozSgpFOjtDdlAqNGNEISM4Wlc1OV51Ly4pCkFETGN2W2g7fVo1L1NfMi10XWJeUnMKWWU1K18oVW5DYSVOZ0ByRlJaUTlicQptYjVHQyFgVT84S0UvM3ZqO11yJDYqCkYpakJmJypTNFczfURoOWcieGMoWyYKRDslIywhdlhCMkZramJOJjU+ODZwVgprLDVgZDxbRXlZYkc3VDRmOCtxdk4u
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
